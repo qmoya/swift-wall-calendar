@@ -1,32 +1,37 @@
 import Foundation
 import OrderedCollections
+import Capsule
 
-typealias Day = ValueDictionary
-typealias Week = ValueDictionary
-typealias Month = ValueDictionary
-typealias MonthAndYear = ValueDictionary
+typealias Map = HashMap<String, AnyHashable>
 extension String: Error {}
 
-func createDay(_ day: Int, week: Int, month: Int, year: Int, calendar: Calendar) throws -> Day {
-	let dateComponents: DateComponents = .init(calendar: calendar, year: year, month: month, day: day)
-	guard let startOfDay: Date = dateComponents.date else {
+func createDay(_ day: Int, week: Int, month: Int, year: Int, calendar: Calendar) throws -> Map {
+	let comps: DateComponents = .init(calendar: calendar, year: year, month: month, day: day)
+	guard let startOfDay = comps.date else {
 		throw "unable to create date"
+	}
+	
+	guard let year = comps.year, let month = comps.month, let day = comps.day else {
+		throw "unable to get components"
 	}
 
 	return [
-		"starts_at": .date(startOfDay),
-		"week_number": .integer(week)
+		"starts_at": startOfDay,
+		"year": year,
+		"month": month,
+		"day": day,
+		"week_of_year": week
 	]
 }
 
-func createWeek(_ week: Int, year: Int, calendar: Calendar) throws -> Week {
-	let dateComponents: DateComponents = .init(calendar: calendar, year: year, weekday: calendar.firstWeekday, weekOfYear: week)
-	guard let startOfWeek: Date = dateComponents.date else {
+func createWeek(_ week: Int, year: Int, calendar: Calendar) throws -> Map {
+	let comps: DateComponents = .init(calendar: calendar, year: year, weekday: calendar.firstWeekday, weekOfYear: week)
+	guard let startOfWeek = comps.date else {
 		throw "unable to compute start of week"
 	}
 		
-	var days: [Value] = []
-	var monthAndYears: OrderedSet<MonthAndYear> = []
+	var days: [Map] = []
+	var monthAndYears: OrderedSet<Map> = []
 	
 	for i in 0..<7 {
 		guard let date = calendar.date(byAdding: .day, value: i, to: startOfWeek) else {
@@ -38,45 +43,34 @@ func createWeek(_ week: Int, year: Int, calendar: Calendar) throws -> Week {
 			throw "unable to compute month and year out of \(date)"
 		}
 		
-		let monthAndYear: MonthAndYear = [
-			"month": .integer(month),
-			"year": .integer(year)
+		let monthAndYear: Map = [
+			"month": month,
+			"year": year
 		]
 		monthAndYears.append(monthAndYear)
 		
-		let day: Day = [
-			"starts_at": .date(date),
-			"column": .integer(i),
-			"week_of_year": .integer(week)
+		let day: Map = [
+			"starts_at": date,
+			"column": i,
+			"week_of_year": week
 		]
 		
-		days.append(.dictionary(day))
+		days.append(day)
 	}
 	
 	return [
-		"starts_at": .date(startOfWeek),
-		"days": .array(days),
-		"month_and_years": .array(monthAndYears.map { .dictionary($0) })
+		"starts_at": startOfWeek,
+		"days": days,
+		"month_and_years": monthAndYears
 	]
 }
 
-func createMonth(_ month: Int, year: Int, calendar: Calendar) throws -> Month {
-	let dateComponents: DateComponents = .init(calendar: calendar, year: year, month: month)
-	guard let beginningOfMonth: Date = dateComponents.date else {
-		throw "unable to create date"
-	}
-	
-	return [
-		"id": .date(beginningOfMonth)
-	]
-}
-
-func createWeeks(_ count: Int, startingOn startDate: Date, calendar: Calendar) throws -> [Week] {
+func createWeeks(_ count: Int, startingOn startDate: Date, calendar: Calendar) throws -> [Map] {
 	let dateComponents: DateComponents = calendar.dateComponents([.weekOfYear, .year], from: startDate)
 	guard let week = dateComponents.weekOfYear, let year = dateComponents.year else {
 		throw "unable to extract weekOfYear and year out of \(dateComponents)"
 	}
-	var weeks: [Week] = []
+	var weeks: [Map] = []
 	for i in 0..<count {
 		let week = try createWeek(week + i, year: year, calendar: calendar)
 		weeks.append(week)
@@ -85,24 +79,14 @@ func createWeeks(_ count: Int, startingOn startDate: Date, calendar: Calendar) t
 	return weeks
 }
 
-func printWeek(_ week: Week) {
-	var result: [Int] = []
-	
-	switch week["days"] {
-	case let .array(days):
-		for day in days {
-			switch day {
-			case let .integer(i):
-				result.append(i)
-			default:
-				continue
-			}
-		}
-	default:
-		break
+func printWeek(_ week: Map) {
+	guard let days = week["days"] as? [Map] else {
+		return
 	}
+	let result = days.compactMap { $0["day"] as? Int }
+	print(result)
 }
 
-func printWeeks(_ weeks: [Week], using printer: (Week) -> Void = printWeek) {
+func printWeeks(_ weeks: [Map], using printer: (Map) -> Void = printWeek) {
 	weeks.forEach(printer)
 }

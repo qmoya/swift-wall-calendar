@@ -20,79 +20,51 @@ final class WallCalendarsTests: XCTestCase {
 		let day = try createDay(1, week: 1, month: 12, year: 2021, calendar: calendar)
 		let expectedDate = dateFormatter.date(from: "2021-12-01")!
 		
-		XCTAssertEqual(day["starts_at"], .date(expectedDate))
-		XCTAssertEqual(day["week_number"], .integer(1))
+		XCTAssertEqual(day["starts_at"], expectedDate)
+		XCTAssertEqual(day["week_of_year"], 1)
 	}
-	
-	func testItCreatesMonths() throws {
-		let month = try createMonth(12, year: 2021, calendar: calendar)
 		
-		
-		let expectedDate = dateFormatter.date(from: "2021-12-01")!
-		XCTAssertEqual(month["id"], .date(expectedDate))
-	}
-	
 	func testItCreateAWeek() throws {
-		let week = try createWeek(1, year: 2022, calendar: calendar)
-	
-		switch week["days"] {
-		case let .array(days):
-			let days: [Day] = days.compactMap {
-				switch $0 {
-				case let .dictionary(day):
-					return day
-				default:
-					return nil
-				}
-			}
+		let week: Map = try createWeek(1, year: 2022, calendar: calendar)
 			
-			let dates: [Date] = days.compactMap { day in
-				switch day["starts_at"] {
-				case let .some(.date(date)):
-					return date
-				default:
-					return nil
-				}
-			}
-			
-			XCTAssertEqual(dates, [
-				dateFormatter.date(from: "2021-12-27")!,
-				dateFormatter.date(from: "2021-12-28")!,
-				dateFormatter.date(from: "2021-12-29")!,
-				dateFormatter.date(from: "2021-12-30")!,
-				dateFormatter.date(from: "2021-12-31")!,
-				dateFormatter.date(from: "2022-01-01")!,
-				dateFormatter.date(from: "2022-01-02")!
-			])
-
-		default:
-			XCTFail("unexpected value")
-		}
+		let dates: [Date]? = (week["days"] as? [Map])?
+			.compactMap { $0 }
+			.compactMap { $0["starts_at"] as? Date }
+				
+		XCTAssertEqual(dates, [
+			dateFormatter.date(from: "2021-12-27")!,
+			dateFormatter.date(from: "2021-12-28")!,
+			dateFormatter.date(from: "2021-12-29")!,
+			dateFormatter.date(from: "2021-12-30")!,
+			dateFormatter.date(from: "2021-12-31")!,
+			dateFormatter.date(from: "2022-01-01")!,
+			dateFormatter.date(from: "2022-01-02")!
+		])
 	}
 	
-	func testAWeekBelongsToTwoMonths() throws {
-		let week = try createWeek(1, year: 2022, calendar: calendar)
-
-		switch week["month_and_years"] {
-		case let .array(months):
-			XCTAssertEqual(months, [
-				.dictionary([
-					"year": .integer(2021),
-					"month": .integer(12)
-				]),
-				.dictionary([
-					"year": .integer(2022),
-					"month": .integer(1)
-				])
-			])
-		default:
-			XCTFail()
-		}
-	}
-	
-	func testItCreatesWeeks() throws {
-		let weeks = try createWeeks(10, startingOn: .distantPast, calendar: calendar)
-		
-		XCTAssertEqual(weeks.count, 10)
-	}
+//	func testAWeekBelongsToTwoMonths() throws {
+//		let week = try createWeek(1, year: 2022, calendar: calendar)
+//
+//		switch week["month_and_years"] {
+//		case let .array(months):
+//			XCTAssertEqual(months, [
+//				.dictionary([
+//					"year": .integer(2021),
+//					"month": .integer(12)
+//				]),
+//				.dictionary([
+//					"year": .integer(2022),
+//					"month": .integer(1)
+//				])
+//			])
+//		default:
+//			XCTFail()
+//		}
+//	}
+//
+//	func testItCreatesWeeks() throws {
+//		let weeks = try createWeeks(10, startingOn: .distantPast, calendar: calendar)
+//
+//		XCTAssertEqual(weeks.count, 10)
+//	}
 }
