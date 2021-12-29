@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "swift-collections",
+        "repositoryURL": "https://github.com/msteindorfer/swift-collections.git",
+        "state": {
+          "branch": "capsule-collections",
+          "revision": "1955a63b32e6660141d94db1f05a705934c1fb2c",
+          "version": null
+        }
+      }
+    ]
+  },
+  "version": 1
+}
