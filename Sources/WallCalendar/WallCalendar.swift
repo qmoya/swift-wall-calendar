@@ -1,9 +1,9 @@
 import Foundation
 import OrderedCollections
 
-typealias Map = [String: AnyHashable]
+typealias Day = [String: AnyHashable]
 
-func day(from comps: DateComponents) -> Map {
+func day(from comps: DateComponents) -> Day {
   return [
     "year": comps.year,
     "month": comps.month,
@@ -24,9 +24,7 @@ func endOfWeek(for date: Date, in calendar: Calendar) -> Date {
   return calendar.date(byAdding: .day, value: 6, to: start)!
 }
 
-func days(between startDate: Date, and endDate: Date, in calendar: Calendar) -> [Map] {
-  let from = startOfWeek(for: startDate, in: calendar)
-  let to = endOfWeek(for: endDate, in: calendar)
+func days(between from: Date, and to: Date, in calendar: Calendar) -> [Day] {
   let comps: DateComponents = calendar.dateComponents(
     [.day],
     from: from,
@@ -39,16 +37,22 @@ func days(between startDate: Date, and endDate: Date, in calendar: Calendar) -> 
     .map { day(from: $0) }
 }
 
-func daysGroupedByWeek(_ days: [Map]) -> [[Map]] {
+func extendedDays(between startDate: Date, and endDate: Date, in calendar: Calendar) -> [Day] {
+  let from = startOfWeek(for: startDate, in: calendar)
+  let to = endOfWeek(for: endDate, in: calendar)
+  return days(between: from, and: to, in: calendar)
+}
+
+func groupByWeek(_ days: [Day]) -> [[Day]] {
   OrderedDictionary(grouping: days) { $0["week_of_year"] as? Int }.map(\.value)
 }
 
-func atLeast(oneOf days: [Map], isInMonth month: Int) -> Bool {
+func atLeast(oneOf days: [Day], isInMonth month: Int) -> Bool {
   days.map { $0["month"] as? Int }.contains(month)
 }
 
-func months(daysByWeek: [[Map]]) -> [[[Map]]] {
-  var result = [[[Map]]]()
+func groupByMonth(_ daysByWeek: [[Day]]) -> [[[Day]]] {
+  var result = [[[Day]]]()
   (1...12)
     .map { month in
       daysByWeek.filter { daysInWeek in atLeast(oneOf: daysInWeek, isInMonth: month) }
@@ -61,5 +65,5 @@ func months(daysByWeek: [[Map]]) -> [[[Map]]] {
 public func build(forDaysBetween startDate: Date, and endDate: Date, inCalendar calendar: Calendar)
   -> [[[[String: AnyHashable]]]]
 {
-  months(daysByWeek: daysGroupedByWeek(days(between: startDate, and: endDate, in: calendar)))
+  groupByMonth(groupByWeek(extendedDays(between: startDate, and: endDate, in: calendar)))
 }

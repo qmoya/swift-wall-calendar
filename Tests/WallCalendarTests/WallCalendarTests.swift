@@ -29,7 +29,7 @@ final class WallCalendarsTests: XCTestCase {
   }
 
   func testItCreatesAWeek() throws {
-    let week: [[Map]] = daysGroupedByWeek(
+    let week: [[Day]] = groupByWeek(
       days(between: date("2021-12-27"), and: date("2022-01-02"), in: calendar))
 
     let dates = week.flatMap { $0.map { $0["day"] } }
@@ -38,9 +38,7 @@ final class WallCalendarsTests: XCTestCase {
   }
 
   func testItCreatesMonths() {
-    let months = months(
-      daysByWeek: daysGroupedByWeek(
-        days(between: date("2021-12-21"), and: date("2022-02-02"), in: calendar)))
+    let months = groupByMonth(groupByWeek(extendedDays(between: date("2021-12-21"), and: date("2022-02-02"), in: calendar)))
 
     assertSnapshot(matching: months, as: .dump)
   }
@@ -51,7 +49,7 @@ final class WallCalendarsTests: XCTestCase {
     let end = start
 
     // when
-    let days = days(between: start, and: end, in: calendar)
+    let days = extendedDays(between: start, and: end, in: calendar)
 
     // then
     assertSnapshot(matching: days, as: .dump)
