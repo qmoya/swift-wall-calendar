@@ -3,11 +3,11 @@
     "pins": [
       {
         "package": "swift-collections",
-        "repositoryURL": "https://github.com/msteindorfer/swift-collections.git",
+        "repositoryURL": "https://github.com/apple/swift-collections.git",
         "state": {
-          "branch": "capsule-collections",
-          "revision": "1955a63b32e6660141d94db1f05a705934c1fb2c",
-          "version": null
+          "branch": null,
+          "revision": "48254824bb4248676bf7ce56014ff57b142b77eb",
+          "version": "1.0.2"
         }
       },
       {

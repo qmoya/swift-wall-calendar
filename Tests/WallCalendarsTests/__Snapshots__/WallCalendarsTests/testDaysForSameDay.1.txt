@@ -1,232 +1,113 @@
 ▿ 7 elements
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 20, week_of_year: 52, weekday: 2, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 2
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 20
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 21, week_of_year: 52, weekday: 3, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 3
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 21
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 22, week_of_year: 52, weekday: 4, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 4
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 22
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 23, week_of_year: 52, weekday: 5, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 5
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 23
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 24, week_of_year: 52, weekday: 6, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 6
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 24
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 25, week_of_year: 52, weekday: 7, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 7
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 25
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
-  ▿ [year: 2021, id: DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF, day: 26, week_of_year: 52, weekday: 1, month: 12]
-    ▿ rootNode: BitmapIndexedMapNode<String, AnyHashable>
-      - bitmap1: 1073807360
-      - bitmap2: 2050
-      ▿ content: 4 elements
-        ▿ (2 elements)
-          - .0: "year"
-          - .1: 2021
-        ▿ (2 elements)
-          - .0: "id"
-          - .1: <__NSConcreteUUID> DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 134221824
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "weekday"
-              - .1: 1
-            ▿ (2 elements)
-              - .0: "month"
-              - .1: 12
-        ▿ BitmapIndexedMapNode<String, AnyHashable>
-          - bitmap1: 16416
-          - bitmap2: 0
-          ▿ content: 2 elements
-            ▿ (2 elements)
-              - .0: "day"
-              - .1: 26
-            ▿ (2 elements)
-              - .0: "week_of_year"
-              - .1: 52
-    - cachedKeySetHashCode: -6148429878727404274
-    - cachedSize: 6
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 20
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 2
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 21
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 3
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 22
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 4
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 23
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 5
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 24
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 6
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 25
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 7
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
+  ▿ 5 key/value pairs
+    ▿ (2 elements)
+      - key: "day"
+      - value: 26
+    ▿ (2 elements)
+      - key: "month"
+      - value: 12
+    ▿ (2 elements)
+      - key: "week_of_year"
+      - value: 52
+    ▿ (2 elements)
+      - key: "weekday"
+      - value: 1
+    ▿ (2 elements)
+      - key: "year"
+      - value: 2021
