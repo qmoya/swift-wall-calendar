@@ -1,6 +1,7 @@
 import XCTest
 @testable import WallCalendars
 import Foundation
+import SnapshotTesting
 
 final class WallCalendarsTests: XCTestCase {
 	var dateFormatter: DateFormatter!
@@ -14,6 +15,10 @@ final class WallCalendarsTests: XCTestCase {
 		calendar = .init(identifier: .gregorian)
 		calendar.timeZone = .init(secondsFromGMT: 0)!
 		calendar.firstWeekday = 2
+	}
+	
+	func date(_ yyyyMMMDD: String) -> Date {
+		dateFormatter.date(from: yyyyMMMDD)!
 	}
 	
     func testItCreatesDays() throws {
@@ -67,4 +72,35 @@ final class WallCalendarsTests: XCTestCase {
 //
 //		XCTAssertEqual(weeks.count, 10)
 //	}
+	
+	func testItWalksTheCalendar() {
+		let uuid = UUID(uuidString: "DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF")!
+		let months = months(daysByWeek: daysGroupedByWeek(days(between: date("2021-12-21"), and: date("2022-02-02"), in: calendar, buildUUID: { uuid })))
+		
+		assertSnapshot(matching: months, as: .dump)
+	}
+	
+	func testDaysForSameDay() {
+		// given
+		let start = date("2021-12-21")
+		let end = start
+		
+		let uuid = UUID(uuidString: "DEADBEEF-DEAD-BEEF-DEAD-BEEFDEADBEEF")!
+		
+		// when
+		let days = days(between: start, and: end, in: calendar, buildUUID: { uuid })
+		
+		// then
+		assertSnapshot(matching: days, as: .dump)
+	}
+	
+	func testBeginningOfWeek() {
+		let start = startOfWeek(for: date("2021-12-29"), in: calendar)
+		XCTAssertEqual(start, date("2021-12-27"))
+	}
+	
+	func testEndOfWeek() {
+		let end = endOfWeek(for: date("2021-12-29"), in: calendar)
+		XCTAssertEqual(end, date("2022-01-02"))
+	}
 }

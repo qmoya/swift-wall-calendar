@@ -1,8 +1,7 @@
 import Foundation
 import OrderedCollections
-import Capsule
 
-typealias Map = HashMap<String, AnyHashable>
+typealias Map = Dictionary<String, AnyHashable>
 extension String: Error {}
 
 func createDay(_ day: Int, week: Int, month: Int, year: Int, calendar: Calendar) throws -> Map {
