@@ -38,7 +38,8 @@ final class WallCalendarsTests: XCTestCase {
   }
 
   func testItCreatesMonths() {
-    let months = groupByMonth(groupByWeek(extendedDays(between: date("2021-12-21"), and: date("2022-02-02"), in: calendar)))
+    let months = groupByMonth(
+      groupByWeek(extendedDays(between: date("2021-12-21"), and: date("2022-02-02"), in: calendar)))
 
     assertSnapshot(matching: months, as: .dump)
   }

@@ -1,11 +1,17 @@
 ▿ 7 elements
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 20
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -15,13 +21,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 21
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -31,13 +43,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 22
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -47,13 +65,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 23
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -63,13 +87,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 24
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -79,13 +109,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 25
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52
@@ -95,13 +131,19 @@
     ▿ (2 elements)
       - key: "year"
       - value: 2021
-  ▿ 5 key/value pairs
+  ▿ 7 key/value pairs
     ▿ (2 elements)
       - key: "day"
       - value: 26
     ▿ (2 elements)
       - key: "month"
       - value: 12
+    ▿ (2 elements)
+      - key: "month_identifier"
+      - value: "202112"
+    ▿ (2 elements)
+      - key: "week_identifier"
+      - value: "202152"
     ▿ (2 elements)
       - key: "week_of_year"
       - value: 52

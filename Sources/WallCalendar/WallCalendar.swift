@@ -3,8 +3,24 @@ import OrderedCollections
 
 typealias Day = [String: AnyHashable]
 
+func monthIdentifier(from comps: DateComponents) -> String {
+  guard let year = comps.year, let month = comps.month else {
+    return ""
+  }
+  return [String(format: "%04d", year), String(format: "%02d", month)].joined()
+}
+
+func weekIdentifier(from comps: DateComponents) -> String {
+  guard let year = comps.year, let weekOfYear = comps.weekOfYear else {
+    return ""
+  }
+  return [String(format: "%04d", year), String(format: "%02d", weekOfYear)].joined()
+}
+
 func day(from comps: DateComponents) -> Day {
   return [
+    "month_identifier": monthIdentifier(from: comps),
+    "week_identifier": weekIdentifier(from: comps),
     "year": comps.year,
     "month": comps.month,
     "day": comps.day,
@@ -44,18 +60,22 @@ func extendedDays(between startDate: Date, and endDate: Date, in calendar: Calen
 }
 
 func groupByWeek(_ days: [Day]) -> [[Day]] {
-  OrderedDictionary(grouping: days) { $0["week_of_year"] as? Int }.map(\.value)
+  OrderedDictionary(grouping: days) { $0["week_identifier"] as! String }.map(\.value)
 }
 
-func atLeast(oneOf days: [Day], isInMonth month: Int) -> Bool {
-  days.map { $0["month"] as? Int }.contains(month)
+func isAtLeastOne(of days: [Day], in month: String) -> Bool {
+  days.map { $0["month_identifier"] as? String }.contains(month)
 }
 
 func groupByMonth(_ daysByWeek: [[Day]]) -> [[[Day]]] {
   var result = [[[Day]]]()
-  (1...12)
-    .map { month in
-      daysByWeek.filter { daysInWeek in atLeast(oneOf: daysInWeek, isInMonth: month) }
+
+  let monthIdentifiers = Set(daysByWeek.flatMap { $0 }.map { $0["month_identifier"] as! String })
+    .sorted()
+
+  monthIdentifiers
+    .map { monthIdentifier in
+      daysByWeek.filter { daysInWeek in isAtLeastOne(of: daysInWeek, in: monthIdentifier) }
     }
     .forEach { result.append($0) }
 

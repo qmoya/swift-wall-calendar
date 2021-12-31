@@ -1,10 +1,16 @@
-▿ 5 key/value pairs
+▿ 7 key/value pairs
   ▿ (2 elements)
     - key: "day"
     - value: 1
   ▿ (2 elements)
     - key: "month"
     - value: 12
+  ▿ (2 elements)
+    - key: "month_identifier"
+    - value: "202112"
+  ▿ (2 elements)
+    - key: "week_identifier"
+    - value: ""
   ▿ (2 elements)
     - key: "week_of_year"
     - value: <null>
